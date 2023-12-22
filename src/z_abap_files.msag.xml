@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>Z_ABAP_FILES</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>ABAP File: Messages</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_ABAP_FILES</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Conversão de XSTRING para binário falhou. Tente novamente mais tarde.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_ABAP_FILES</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Não foi possível converter de &amp;1 para OTF. Por favor tente novamente.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_ABAP_FILES</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Não foi possível converter o arquivo &amp;1 para hexadecimal.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_ABAP_FILES</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Não foi possível converter de OTF para PDF. Por favor tente mais tarde.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>Z_ABAP_FILES</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Não foi possível converter de PDF para HEX. Por favor tente novamente.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
