@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_FILE_DOWNLOADER</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>ABAP File: Downloader</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>LOCAL</CMPNAME>
+     <SCONAME>ZCX_FILE_SCMS_WRAP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP File: SCMS Wrapper Exception</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOCAL</CMPNAME>
+     <SCONAME>ZCX_FILE_WRAP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP File: Wrapper Exception</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
