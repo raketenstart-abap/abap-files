@@ -9,10 +9,10 @@ public section.
   class-methods CLASS_CONSTRUCTOR .
   methods CONSTRUCTOR
     importing
-      !IO_FILE type ref to ZCA_FILE
+      !IO_FILE type ref to ZCA_FILE optional
       !IO_FILE_FACTORY type ref to ZCL_FILE_FACTORY optional
       !IO_FILE_SCMS_WRAP type ref to ZIF_FILE_SCMS_WRAP optional
-      !PROPS type ZST_FILE_PROPS optional .
+      !PROPS type ZST_FILE_PROPS .
   PROTECTED SECTION.
 private section.
 
@@ -37,6 +37,10 @@ CLASS ZCL_FILE_UTILS IMPLEMENTATION.
 
   METHOD constructor.
 
+    IF io_file IS BOUND.
+      mo_file = io_file.
+    ENDIF.
+
     IF io_file_factory IS BOUND.
       mo_file_factory = io_file_factory.
     ELSE.
@@ -49,9 +53,29 @@ CLASS ZCL_FILE_UTILS IMPLEMENTATION.
       CREATE OBJECT mo_file_scms_wrap TYPE zcl_file_scms_wrap.
     ENDIF.
 
-    mo_file = io_file.
-
     ms_file_props = props.
+
+  ENDMETHOD.
+
+
+  METHOD zif_file_utils~as_pdf.
+
+    IF raw IS INITIAL.
+      IF ms_file_props-data IS NOT INITIAL AND
+         ms_file_props-raw  IS INITIAL.
+        ms_file_props-raw = mo_file_scms_wrap->scms_string_to_xstring(
+          iv_data = ms_file_props-data
+        ).
+      ELSE.
+*       " not supported yet
+      ENDIF.
+    ELSE.
+      ms_file_props-raw = raw.
+    ENDIF.
+
+    ms_file_props-type = zcl_file_pdf=>file_type.
+
+    result = mo_file_factory->create( ms_file_props ).
 
   ENDMETHOD.
 
@@ -59,7 +83,8 @@ CLASS ZCL_FILE_UTILS IMPLEMENTATION.
   METHOD zif_file_utils~as_raw.
 
     IF raw IS INITIAL.
-      IF ms_file_props-data IS NOT INITIAL.
+      IF ms_file_props-data IS NOT INITIAL AND
+         ms_file_props-raw  IS INITIAL.
         ms_file_props-raw = mo_file_scms_wrap->scms_string_to_xstring(
           iv_data = ms_file_props-data
         ).
@@ -98,7 +123,7 @@ CLASS ZCL_FILE_UTILS IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD ZIF_FILE_UTILS~READ_FILE_METADATA.
+  METHOD zif_file_utils~read_file_metadata.
 
     result = ms_file_props.
 

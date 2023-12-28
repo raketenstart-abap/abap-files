@@ -1,9 +1,9 @@
-interface ZIF_FILE_DOWNLOADER
-  public .
+INTERFACE zif_file_downloader
+  PUBLIC .
 
 
-  methods LOCAL
-    raising
-      ZCX_FILE_WRAP
-      ZCX_FILE_SCMS_WRAP .
-endinterface.
+  METHODS local
+    RAISING
+      zcx_file_wrap
+      zcx_file_scms_wrap .
+ENDINTERFACE.

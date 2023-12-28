@@ -22,11 +22,18 @@ CLASS ZCL_FILE_FACTORY IMPLEMENTATION.
 
     DATA lv_class_name TYPE classname.
 
-    lv_class_name = |ZCL_FILE_{ props-type }|.
+    IF props-type IS NOT INITIAL.
+      lv_class_name = |ZCL_FILE_{ props-type }|.
 
-    CREATE OBJECT result TYPE (lv_class_name)
-      EXPORTING
-        props = props.
+      CREATE OBJECT result TYPE (lv_class_name)
+        EXPORTING
+          props = props.
+
+    ELSE.
+      CREATE OBJECT result TYPE zcl_file
+        EXPORTING
+          props = props.
+    ENDIF.
 
   ENDMETHOD.
 ENDCLASS.
