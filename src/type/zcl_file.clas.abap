@@ -1,15 +1,15 @@
-class ZCL_FILE definition
-  public
-  inheriting from ZCA_FILE
-  create public .
+CLASS zcl_file DEFINITION
+  PUBLIC
+  INHERITING FROM zca_file
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  methods CONSTRUCTOR
-    importing
-      !PROPS type ZST_FILE_PROPS optional .
-protected section.
-private section.
+    METHODS constructor
+      IMPORTING
+        !props TYPE zst_file_props OPTIONAL .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
@@ -17,7 +17,7 @@ ENDCLASS.
 CLASS ZCL_FILE IMPLEMENTATION.
 
 
-  method CONSTRUCTOR.
+  METHOD constructor.
 
     DATA ls_props TYPE zst_file_props.
 
@@ -29,5 +29,5 @@ CLASS ZCL_FILE IMPLEMENTATION.
 
     super->constructor( props = ls_props ).
 
-  endmethod.
+  ENDMETHOD.
 ENDCLASS.
